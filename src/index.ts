@@ -1,1 +1,2 @@
-export { PubSub } from './nats-pubsub'
+export { NatsPubSub } from "./nats-pubsub";
+export { StanPubSub } from "./stan-pubsub";

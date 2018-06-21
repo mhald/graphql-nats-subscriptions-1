@@ -3,9 +3,13 @@
   "version": "0.1.3",
   "description": "GraphQL subscriptions over NATS",
   "author": "Moon & Walker Technoligies",
+  "contributors": [
+    "Aiva Health <opensource@aivahealth.com>"
+  ],
   "license": "MIT",
   "repository": "moonwalker/graphql-nats-subscriptions",
   "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "watch": "tsc -w",
     "build": "rollup -c",
@@ -13,7 +17,8 @@
   },
   "dependencies": {
     "graphql-subscriptions": "^0.5.8",
-    "nats": "^0.8.4"
+    "nats": "^0.8.4",
+    "node-nats-streaming": "^0.0.40"
   },
   "devDependencies": {
     "@types/node": "^9.4.7",
