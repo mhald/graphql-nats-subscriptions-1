@@ -6,7 +6,7 @@ export interface NatsPubSubOptions {
   natsUrl?: string
 }
 
-export class PubSub implements PubSubEngine {
+export class NatsPubSub implements PubSubEngine {
   private nats: Client
 
   constructor(options: NatsPubSubOptions = {}) {

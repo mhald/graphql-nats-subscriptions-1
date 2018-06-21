@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "lib": ["esnext"],
-    "module": "ESNext",
+    "module": "esnext",
     "rootDir": "src",
     "target": "es5",
-    "outDir": "lib"
+    "outDir": "lib",
+    "moduleResolution": "node",
+    "declaration": true
   },
   "exclude": [
     "node_modules",

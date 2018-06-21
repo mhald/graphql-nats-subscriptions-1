@@ -125,6 +125,10 @@ glob@^7.0.5:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
+google-protobuf@^3.3.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/google-protobuf/-/google-protobuf-3.5.0.tgz#b8cc63c74d83457bd8a9a904503c8efb26bca339"
+
 graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
@@ -250,11 +254,25 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
+nats@^0.8.10:
+  version "0.8.10"
+  resolved "https://registry.yarnpkg.com/nats/-/nats-0.8.10.tgz#3afb6d60e94385dc719f752ae9995495071d70a1"
+  dependencies:
+    nuid "^0.6.14"
+
 nats@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/nats/-/nats-0.8.4.tgz#92d047b7c4414422598b420f89491ad2a2727563"
   dependencies:
     nuid ">=0.6.8"
+
+node-nats-streaming@^0.0.40:
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/node-nats-streaming/-/node-nats-streaming-0.0.40.tgz#49d5c3a121c92612e6e2d34642ad02ab9d11e568"
+  dependencies:
+    google-protobuf "^3.3.0"
+    nats "^0.8.10"
+    nuid "^0.6.14"
 
 normalize-path@^2.0.1:
   version "2.1.1"
@@ -262,7 +280,7 @@ normalize-path@^2.0.1:
   dependencies:
     remove-trailing-separator "^1.0.1"
 
-nuid@>=0.6.8:
+nuid@>=0.6.8, nuid@^0.6.14:
   version "0.6.14"
   resolved "https://registry.yarnpkg.com/nuid/-/nuid-0.6.14.tgz#a225c8b720e46c563ad8d13641368669f6c25b48"
 
