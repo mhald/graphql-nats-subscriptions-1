@@ -52,7 +52,10 @@ export class StanPubSub implements PubSubEngine {
       const sub = this.stanClient.subscribe(subject, "", subOpts);
       sub.on("ready", () => {
         sub.on("message", (msg: stan.Message) => {
-          onMessage(JSON.parse(msg.getData() as string));
+          const data = msg.getData() as string;
+          const timestamp = msg.getTimestamp().valueOf();
+          const result = { timestamp: timestamp, data: JSON.parse(data) };
+          onMessage(result);
           msg.ack();
         });
         const subNum = this.nextSubscriptionNumber;
