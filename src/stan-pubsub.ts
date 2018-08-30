@@ -52,10 +52,7 @@ export class StanPubSub implements PubSubEngine {
       const sub = this.stanClient.subscribe(subject, "", subOpts);
       sub.on("ready", () => {
         sub.on("message", (msg: stan.Message) => {
-          const data = msg.getData() as string;
-          const timestamp = msg.getTimestamp().valueOf();
-          const result = { timestamp: timestamp, data: JSON.parse(data) };
-          onMessage(result);
+          onMessage(JSON.parse(msg.getData() as string));
           msg.ack();
         });
         const subNum = this.nextSubscriptionNumber;
@@ -67,6 +64,10 @@ export class StanPubSub implements PubSubEngine {
         reject(err);
       });
     });
+  }
+
+  public close() {
+    this.stanClient.close();
   }
 
   public unsubscribe(sid: number) {

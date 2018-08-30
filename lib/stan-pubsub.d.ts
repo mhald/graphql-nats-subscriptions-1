@@ -13,6 +13,7 @@ export declare class StanPubSub implements PubSubEngine {
     connect(): Promise<{}>;
     publish(subject: string, payload: any): boolean;
     subscribe(subject: string, onMessage: Function, options: any): Promise<number>;
+    close(): void;
     unsubscribe(sid: number): void;
     asyncIterator<T>(subjects: string | string[], options?: any): AsyncIterator<T>;
 }

@@ -23,6 +23,10 @@ export class NatsPubSub implements PubSubEngine {
     return Promise.resolve(sid)
   }
 
+  public close() {
+    this.nats.close()
+  }
+
   public unsubscribe(sid: number) {
     this.nats.unsubscribe(sid)
   }
