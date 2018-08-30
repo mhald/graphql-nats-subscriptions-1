@@ -27,6 +27,10 @@ export class NatsPubSub implements PubSubEngine {
     this.nats.unsubscribe(sid)
   }
 
+  public close() {
+    this.nats.close()
+  }
+
   public asyncIterator<T>(subjects: string | string[]): AsyncIterator<T> {
     return new PubSubAsyncIterator<T>(this, subjects)
   }

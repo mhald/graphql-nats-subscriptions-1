@@ -14,5 +14,6 @@ export declare class StanPubSub implements PubSubEngine {
     publish(subject: string, payload: any): boolean;
     subscribe(subject: string, onMessage: Function, options: any): Promise<number>;
     unsubscribe(sid: number): void;
+    close(): void;
     asyncIterator<T>(subjects: string | string[], options?: any): AsyncIterator<T>;
 }

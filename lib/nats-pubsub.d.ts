@@ -8,5 +8,6 @@ export declare class NatsPubSub implements PubSubEngine {
     publish(subject: string, payload: any): boolean;
     subscribe(subject: string, onMessage: Function): Promise<number>;
     unsubscribe(sid: number): void;
+    close(): void;
     asyncIterator<T>(subjects: string | string[]): AsyncIterator<T>;
 }
