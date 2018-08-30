@@ -28,7 +28,9 @@ export class NatsPubSub implements PubSubEngine {
   }
 
   public close() {
-    this.nats.close()
+    if (this.nats) {
+        this.nats.close()
+    }
   }
 
   public asyncIterator<T>(subjects: string | string[]): AsyncIterator<T> {

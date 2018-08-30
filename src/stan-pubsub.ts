@@ -78,7 +78,9 @@ export class StanPubSub implements PubSubEngine {
   }
 
   public close() {
-    this.stanClient.close();
+    if (this.stanClient) {
+      this.stanClient.close();
+    }
   }
 
   public asyncIterator<T>(subjects: string | string[], options?: any): AsyncIterator<T> {
